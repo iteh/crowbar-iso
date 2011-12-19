@@ -1,1 +1,3 @@
 .vagrant
+crowbar-build-cache/*
+iso/*
