@@ -8,16 +8,25 @@ Install Virtualbox
 
 Install Vagrant and Veewee
 
+```
 gem install vagrant
 gem install veewee
+```
 
+### Build the box and add it
+```
 vagrant basebox build 'ubuntu-10.10-server-amd64'
 vagrant basebox validate ubuntu-10.10-server-amd64
 vagrant basebox export   ubuntu-10.10-server-amd64
 
 vagrant box add 'ubuntu-10.10-server-amd64' 'ubuntu-10.10-server-amd64.box'
+```
 
+## Use it ##
+
+```
 vagrant up
+```
 
 this can take a very long time to build (at least at the first time)
 
