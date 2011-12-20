@@ -4,7 +4,11 @@
 Vagrant::Config.run do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
+  # please see the online documentation at vagrantup.com.   
+  
+  config.vm.customize do |vm|
+    vm.memory_size = 512
+  end
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntu-10.10-server-amd64"
@@ -59,10 +63,12 @@ Vagrant::Config.run do |config|
   #
    config.vm.provision :chef_solo do |chef|   
      
-     chef.log_level = :debug
+     chef.log_level = :info
      
      chef.cookbooks_path = "cookbooks"
-     chef.add_recipe "sledgehammer"
+     chef.add_recipe "sledgehammer"  
+     chef.add_recipe "crowbar"  
+     
   #   chef.add_role "web"
   #
   #   # You may also specify custom JSON attributes:
