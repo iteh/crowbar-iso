@@ -5,13 +5,13 @@ Vagrant::Config.run do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.   
-  
+
   config.vm.customize do |vm|
-    vm.memory_size = 512
+    vm.memory_size = 2048
   end
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu-10.10-server-amd64"
+  config.vm.box = "precise"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -32,8 +32,8 @@ Vagrant::Config.run do |config|
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
   config.vm.share_folder "iso", "/root/iso", "./iso"
-  config.vm.share_folder "crowbar-build-cache", "/root/.crowbar-build-cache", "./crowbar-build-cache"
-  
+  #config.vm.share_folder "crowbar-build-cache", "/root/.crowbar-build-cache", "./crowbar-build-cache"
+
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
@@ -67,7 +67,7 @@ Vagrant::Config.run do |config|
      
      chef.cookbooks_path = "cookbooks"
      chef.add_recipe "sledgehammer"  
-     chef.add_recipe "crowbar"  
+     #chef.add_recipe "crowbar"  
      
   #   chef.add_role "web"
   #
