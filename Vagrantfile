@@ -78,7 +78,7 @@ Vagrant::Config.run do |config|
    end
 
    config.vm.provision :shell do |shell|
-    shell.inline = "#export ISO_LIBRARY=/root/iso ; cd /root/crowbar/ ; ./build_crowbar.sh ubuntu-12.04 --update-cache"
+    shell.inline = "export ISO_LIBRARY=/root/iso ; cd /root/crowbar/ ; ./build_crowbar.sh ubuntu-12.04 --update-cache"
     #shell.args = "'write this to a file'"
    end
   # Enable provisioning with chef server, specifying the chef server URL,
