@@ -33,7 +33,7 @@ Vagrant::Config.run do |config|
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
   config.vm.share_folder "iso", "/root/iso", "./iso"
-  #config.vm.share_folder "crowbar-build-cache", "/root/.crowbar-build-cache", "./crowbar-build-cache"
+  config.vm.share_folder "crowbar-build-cache", "/root/.crowbar-build-cache", "./crowbar-build-cache"
 
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
@@ -67,8 +67,9 @@ Vagrant::Config.run do |config|
      chef.log_level = :info
      
      chef.cookbooks_path = "cookbooks"
+     chef.add_recipe "apt"
      chef.add_recipe "sledgehammer"  
-     #chef.add_recipe "crowbar"  
+     chef.add_recipe "crowbar"  
      
   #   chef.add_role "web"
   #
@@ -76,6 +77,10 @@ Vagrant::Config.run do |config|
      chef.json = { :wipe_cache => true }
    end
 
+   config.vm.provision :shell do |shell|
+    shell.inline = "#export ISO_LIBRARY=/root/iso ; cd /root/crowbar/ ; ./build_crowbar.sh ubuntu-12.04 --update-cache"
+    #shell.args = "'write this to a file'"
+   end
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
   #
