@@ -7,14 +7,14 @@ crowbar_repo_local_uri = "/root/crowbar"
 
 git crowbar_repo_local_uri do
   repository "git://github.com/dellcloudedge/crowbar.git"
-  reference "openstack-os-build" 
+  reference node.crowbar.repository_ref 
   enable_submodules true
   action :sync
 end 
 
-bash "build crowbar" do
-  environment ({"CACHE_DIR" => node.sledgehammer.build_cache_path}) 
-  cwd crowbar_sledgehammer_repo_local_uri
-  code "./build_crowbar.sh" 
+#bash "build crowbar" do
+#  environment ({"CACHE_DIR" => node.sledgehammer.build_cache_path}) 
+#  cwd crowbar_sledgehammer_repo_local_uri
+#  code "./build_crowbar.sh" 
   #creates crowbar_sledgehammer_tar_local_uri
-end 
+#end 
