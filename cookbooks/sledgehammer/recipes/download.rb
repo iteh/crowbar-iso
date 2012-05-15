@@ -8,7 +8,7 @@ end if node.sledgehammer.prune_sledgehammer
 bash "untar sledgehammer" do
   code %Q{tar -xzvf #{node.sledgehammer.downloaded_archive}}
   cwd node.sledgehammer.crowbar_build_cache_path
-  action :nothing
+#  action :nothing
   not_if do
     File.exists?(File.join(node.sledgehammer.tftpboot_path,"initrd0.img"))
   end

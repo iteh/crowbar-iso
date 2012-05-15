@@ -1,3 +1,4 @@
 .vagrant
 crowbar-build-cache/*
 iso/*
+share/*
