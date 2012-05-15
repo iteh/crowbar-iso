@@ -12,11 +12,11 @@ Vagrant::Config.run do |config|
   end
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise"
+  config.vm.box = "precise64"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "internal url"
+  config.vm.box_url = "http://files.vagrantup.com/lucid64.box"
 
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
@@ -27,7 +27,7 @@ Vagrant::Config.run do |config|
 
   # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
-  config.vm.forward_port 22, 6666
+  #config.vm.forward_port 22, 6666
 
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
