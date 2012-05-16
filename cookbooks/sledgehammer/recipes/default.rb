@@ -17,8 +17,9 @@
 # limitations under the License.
 #
 
-template "root/.build-crowbar.conf" do
+template "/home/vagrant/.build-crowbar.conf" do
   source "build-crowbar.conf"
+  owner "vagrant"
 end
 
 

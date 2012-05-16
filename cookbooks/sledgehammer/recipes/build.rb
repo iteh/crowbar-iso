@@ -23,7 +23,7 @@
   package package_name
 end 
 
-crowbar_sledgehammer_repo_local_uri = "/root/crowbar-sledgehammer"
+crowbar_sledgehammer_repo_local_uri = "/home/vagrant/crowbar-sledgehammer"
 
 git crowbar_sledgehammer_repo_local_uri do
   repository "git://github.com/dellcloudedge/crowbar-sledgehammer.git"

@@ -25,9 +25,10 @@
   end
 end 
 
-crowbar_repo_local_uri = "/root/crowbar"
+crowbar_repo_local_uri = "/home/vagrant/crowbar"
 
-git crowbar_repo_local_uri do
+git crowbar_repo_local_uri do   
+  user "vagrant"
   repository "git://github.com/dellcloudedge/crowbar.git"
   reference node.crowbar.repository_ref 
   enable_submodules true
