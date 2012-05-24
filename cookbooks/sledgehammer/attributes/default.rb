@@ -29,6 +29,6 @@ default.sledgehammer.centos_download_url = "http://ftp.riken.jp/Linux/centos/5.6
 default.sledgehammer.filename = "sledgehammer-tftpboot.tar.gz" 
 default.sledgehammer.download_url = "http://crowbar.zehicle.com/20120215/#{node.sledgehammer.filename}"
 default.sledgehammer.centos_local_uri = "/home/vagrant/share/iso/CentOS-5.6-x86_64-bin-DVD-1of2.iso" 
-default.sledgehammer.crowbar_build_cache_path = "/home/vagrant/share/crowbar-build-cache"
+default.sledgehammer.crowbar_build_cache_path = "/home/vagrant/crowbar-build-cache"
 default.sledgehammer.tftpboot_path = File.join(node.sledgehammer.crowbar_build_cache_path,"/tftpboot")
 default.sledgehammer.downloaded_archive = File.join(node.sledgehammer.crowbar_build_cache_path,node.sledgehammer.filename) 
