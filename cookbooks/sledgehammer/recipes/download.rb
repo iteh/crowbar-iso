@@ -29,6 +29,9 @@ bash "untar sledgehammer" do
   user "vagrant"
   not_if do
     File.exists?(File.join(node.sledgehammer.tftpboot_path,"initrd0.img"))
+  end 
+  only_if do
+    File.exists?(node.sledgehammer.downloaded_archive)    
   end
 end
 
