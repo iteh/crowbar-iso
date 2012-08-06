@@ -13,7 +13,6 @@ vagrant up
 # build the iso: 
 vagrant ssh -c "cd crowbar; ./build_crowbar.sh ubuntu-12.04"
 ```  
-
 this can take a very long time to build (at least at the first time) 
 
 to update the repo do a provision:
@@ -21,8 +20,13 @@ to update the repo do a provision:
 ```
 vagrant provision
 ```
-
 which will fetch the latest essex branch
 
 
+to update just the barclamps: (e.g. new distro packages )
+
+```
+./build_crowbar.sh ubuntu-12.04 --no-iso --update-cache
+ls ../crowbar-build-cache/ubuntu-12.04/build/dell/barclamps/
+```
 
