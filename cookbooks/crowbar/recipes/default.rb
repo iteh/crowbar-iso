@@ -17,19 +17,23 @@
 # limitations under the License.
 #
 
-#https://github.com/dellcloudedge/crowbar/wiki/Build-Crowbar.ISO
+#https://github.com/dellcloudedge/crowbar/wiki/Build-Crowbar.ISO          
 
-%W{openssl git genisoimage build-essential debootstrap mkisofs binutils ruby curl}.each do |package_name|
+template "/home/vagrant/.build-crowbar.conf" do
+  source "build-crowbar.conf"
+  owner "vagrant"
+end
+
+%W{openssl curl git build-essential debootstrap mkisofs binutils rpm ruby rubygems genisoimage}.each do |package_name|
   package package_name do
     action :upgrade
   end
 end 
 
-crowbar_repo_local_uri = "/home/vagrant/crowbar"
 
-git crowbar_repo_local_uri do   
+git node.crowbar.repo_local_uri do   
   user "vagrant"
-  repository "git://github.com/dellcloudedge/crowbar.git"
+  repository File.join(node.crowbar.repository_url,"crowbar.git")
   reference node.crowbar.repository_ref 
   enable_submodules true
   action :sync

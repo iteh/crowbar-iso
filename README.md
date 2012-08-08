@@ -2,8 +2,23 @@
 
 ## Prerequisites ##
 
-Use a Ubuntu 12.04 Vagrant box. 
-Its opinionated in a sense as we need ubuntu-12.04 to work, so fork an help to make it more useable for other distros :-)
+Use a Ubuntu 12.04 Vagrant box. It is already configured so a ```vagrant up``` will do the right thing.
+Its opinionated in a sense as we need ubuntu-12.04 to work, so fork an help to make it more useable for other distros :-) 
+
+You can prepare the build by putting the ubuntu cloud iso and the centos iso in the shared folder: 
+
+- http://vault.centos.org/6.2/isos/x86_64/CentOS-6.2-x86_64-bin-DVD1.iso 
+- http://releases.ubuntu.com/12.04/ubuntu-12.04-server-amd64.iso
+
+```
+$ ls -al share/iso/
+total 17335648
+drwxr-xr-x  9 ehaselwanter  staff         306 Aug  8 23:09 .
+drwxr-xr-x  5 ehaselwanter  staff         170 May 15 22:45 ..
+-rw-r--r--  1 ehaselwanter  staff  4423129088 Aug  6 11:49 CentOS-6.2-x86_64-bin-DVD1.iso
+-rw-rw-r--  1 ehaselwanter  staff   312981628 Aug  6 14:13 sledgehammer-tftpboot.tar.gz
+-rw-r--r--@ 1 ehaselwanter  staff   717533184 Apr 25 15:29 ubuntu-12.04-server-amd64.iso
+```
 
 ## Use it ##
 

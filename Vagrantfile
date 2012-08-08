@@ -23,7 +23,7 @@ Vagrant::Config.run do |config|
 
   # Assign this VM to a host only network IP, allowing you to access it
   # via the IP.
-  config.vm.network :hostonly, "10.11.12.13", :adapter => 4
+  #config.vm.network :hostonly, "10.11.12.13", :adapter => 4
 
   # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
@@ -68,13 +68,23 @@ Vagrant::Config.run do |config|
      
      chef.cookbooks_path = "cookbooks"
      chef.add_recipe "apt"
-     chef.add_recipe "sledgehammer"  
+     #chef.add_recipe "sledgehammer"  
      chef.add_recipe "crowbar"  
      
   #   chef.add_role "web"
   #
   #   # You may also specify custom JSON attributes:
-     chef.json = { :wipe_cache => true }
+     chef.json = { 
+       :wipe_cache => true,
+       :crowbar => {
+         :repository_ref => 'release/fred/openstack-os-build'
+         },
+       :sledgehammer => {
+         :strategy => "build",
+         :centos_download_url => 'http://vault.centos.org/6.2/isos/x86_64/CentOS-6.2-x86_64-bin-DVD1.iso',
+         :centos_local_uri => '/home/vagrant/share/iso/CentOS-6.2-x86_64-bin-DVD1.iso' 
+         } 
+       }
    end
 
    #config.vm.provision :shell do |shell|

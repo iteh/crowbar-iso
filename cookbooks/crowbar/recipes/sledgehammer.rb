@@ -1,6 +1,6 @@
 #
-# Cookbook Name:: sledgehammer 
-# Recipe:: download
+# Cookbook Name:: crowbar 
+# Recipe:: sledgehammer
 #
 # Copyright 2012, Deutsche Telekom Laboratories 
 #
