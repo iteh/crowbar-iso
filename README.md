@@ -26,7 +26,8 @@ drwxr-xr-x  5 ehaselwanter  staff         170 May 15 22:45 ..
 # downloads the ubuntu 12.04 vagrant box and starts it
 vagrant up
 # build the iso: 
-vagrant ssh -c "cd crowbar; ./build_crowbar.sh ubuntu-12.04"
+vagrant ssh -c "cd crowbar; ./build_crowbar.sh ubuntu-12.04"  
+# or ./build_crowbar.sh ubuntu-12.04 --update-cache
 ```  
 this can take a very long time to build (at least at the first time) 
 
