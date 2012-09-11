@@ -30,10 +30,19 @@ end
   end
 end 
 
+# add your hosts tot the known hosts
 template "/home/vagrant/.ssh/known_hosts" do
   source "known_hosts.erb"
   owner "vagrant"
   mode "0664"
+end   
+
+# add your deploy key if there is one
+file "/home/vagrant/.ssh/id_rsa" do
+  content node.deploy_key
+  only_if node.deploy_key
+  owner "ubuntu"
+  mode 0600
 end
 
 git node.crowbar.repo_local_uri do   
