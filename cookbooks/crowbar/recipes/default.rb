@@ -40,7 +40,7 @@ end
 # add your deploy key if there is one
 file "/home/vagrant/.ssh/id_rsa" do
   content node.deploy_key
-  only_if node.deploy_key
+  only_if node.deploy_key.nil?
   owner "ubuntu"
   mode 0600
 end
