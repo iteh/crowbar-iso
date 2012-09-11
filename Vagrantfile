@@ -68,16 +68,14 @@ Vagrant::Config.run do |config|
      
      chef.cookbooks_path = "cookbooks"
      chef.add_recipe "apt"
-     #chef.add_recipe "sledgehammer"  
      chef.add_recipe "crowbar"  
-     
-  #   chef.add_role "web"
-  #
-  #   # You may also specify custom JSON attributes:
+
+     # You may also specify custom JSON attributes:
      chef.json = { 
        :wipe_cache => true,
        :crowbar => {
-         :repository_ref => 'release/fred/openstack-os-build'
+         :repository_ref => 'release/fred/openstack-os-build',  
+         :repository_url => 'git://github.com/dellcloudedge/'
          },
        :sledgehammer => {
          :strategy => "build",

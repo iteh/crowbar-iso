@@ -33,7 +33,7 @@ end
 
 git node.crowbar.repo_local_uri do   
   user "vagrant"
-  repository File.join(node.crowbar.repository_url,"crowbar.git")
+  repository "#{node.crowbar.repository_url}crowbar.git"
   reference node.crowbar.repository_ref 
   enable_submodules true
   action :sync
