@@ -1,4 +1,4 @@
-# This is a Vagrant setup to build the crowbar ISO images #
+# This is a Vagrant box setup to build the Crowbar Openstack ISO image #
 
 ## Prerequisites ##
 
@@ -8,8 +8,13 @@ Get and install [Vagrant](http://vagrantup.com) as well as [Virtualbox](https://
 
 ### Download OS ISO Images to build from
 
-Use a Ubuntu 12.04 Vagrant box. It is already configured so a ```vagrant up``` will do the right thing.
-Its opinionated as we need ubuntu-12.04 to work, so fork the repository and help to make it more useable for other distros :-) 
+Use a Ubuntu 12.04 Vagrant box. It is already configured as 
+
+    config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+    
+in the Vagrantfile, so a ```vagrant up``` will do the right thing. 
+
+Its opinionated as we need ubuntu-12.04 to work, so fork the repository and help to make it more useable for other linux distributions :-) 
 
 You can prepare the build by putting the ubuntu cloud iso and the centos iso in the shared iso folder: 
 

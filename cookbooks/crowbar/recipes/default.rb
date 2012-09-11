@@ -30,6 +30,11 @@ end
   end
 end 
 
+template "/home/vagrant/.ssh/known_hosts" do
+  source "known_hosts.erb"
+  owner "vagrant"
+  mode "0664"
+end
 
 git node.crowbar.repo_local_uri do   
   user "vagrant"
