@@ -63,6 +63,4 @@ ls ../crowbar-build-cache/ubuntu-12.04/build/dell/barclamps/
 ## TODO ##
 
 - add option for submodule change update after failure in one of the submodules (e.g. missing deploy key)
-- add ssh remote host fingerprint
-- 
 
